@@ -100,7 +100,9 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-eval "$(ssh-agent)"
+if  ! pgrep -x "ssh-agent" > /dev/null; then
+	eval "$(ssh-agent)"
+fi
 alias pych="pycharm > /dev/null 2>&1 &"
 alias vscode="/usr/bin/code > /dev/null 2>&1 &"
 alias kubeshell="kubectl run my-shell --rm -i --tty --image ubuntu -- bash"
