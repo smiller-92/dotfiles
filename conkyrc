@@ -56,3 +56,4 @@ Disk usage:$alignr${fs_used /}/${fs_size /}
 CPU usage:$alignr${cpu cpu0}%
 ${if_existing /sys/class/net/enp0s3/operstate up}IP Address:$alignr${addr enp0s3} ${endif}
 External IP:$alignr${exec curl -s ifconfig.io}
+
